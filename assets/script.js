@@ -104,10 +104,10 @@ function forecast(cityid){
             var humidity= response.list[((i+1)*8)-1].main.humidity;
         
         
-            $("#fDate"+i).html(date);
-            $("#fImg"+i).html("<img src="+iconurl+">");
-            $("#fTemp"+i).html(tempF+"&#8457");
-            $("#fHumidity"+i).html(humidity+"%");
+            $("#date"+i).html(date);
+            $("#img"+i).html("<img src="+iconurl+">");
+            $("#temp"+i).html(tempF+"&#8457");
+            $("#humidity"+i).html(humidity+"%");
             
             
         }
