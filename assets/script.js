@@ -77,7 +77,7 @@ function currentWeather(city){
 }
 function UVIndex(ln,lt){
 
-    var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+APIKey+"&lat="+lt+"&lon="+ln;
+    var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+lt+"&lon="+ln;
     $.ajax({
             url:uvqURL,
             method:"GET"
@@ -103,10 +103,11 @@ function forecast(cityid){
             var tempF=(((tempK-273.5)*1.80)+32).toFixed(2);
             var humidity= response.list[((i+1)*8)-1].main.humidity;
         
-            $("#date"+i).html(date);
+            $("#fDate"+i).html(date);
             $("#fImg"+i).html("<img src="+iconurl+">");
-            $("#temp"+i).html(tempF+"&#8457");
-            $("#humidity"+i).html(humidity+"%");
+            $("#fTemp"+i).html(tempF+"&#8457");
+            $("#fHumidity"+i).html(humidity+"%");
+            
         }
         
     });
@@ -118,7 +119,6 @@ function addToList(c){
     $(listEl).attr("data-value",c.toUpperCase());
     $(".list-group").append(listEl);
 }
-
 function invokePastSearch(event){
     var liEl=event.target;
     if (event.target.matches("li")){
